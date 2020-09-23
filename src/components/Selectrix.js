@@ -36,9 +36,8 @@ export default class Selectrix extends React.Component {
 	}
 
 	render() {
-
 		return(
-			<App />
+			<App name={this.props.name} />
 		);
 
 	}
@@ -46,6 +45,7 @@ export default class Selectrix extends React.Component {
 
 Selectrix.defaultProps = {
 	id: '',
+	name: '',
 	options: [],
 	height: 190,
 	className: '',
@@ -83,6 +83,7 @@ Selectrix.defaultProps = {
 Selectrix.propTypes = {
 	options: PropTypes.array.isRequired,
 	id: PropTypes.string.isRequired,
+	name: PropTypes.string,
 	height: PropTypes.oneOfType( [
 		PropTypes.number,
 		PropTypes.string,

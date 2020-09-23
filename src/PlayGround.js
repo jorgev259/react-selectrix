@@ -74,6 +74,7 @@ export default class PlayGround extends React.Component {
 					}
 				</div>
 				<Selectrix
+					name='test'
 					options={ options }
 					onChange={ this.setValue }
 					arrow={ true }

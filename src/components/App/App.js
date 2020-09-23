@@ -10,7 +10,7 @@ import NoResults from './partials/NoResults/';
 export default class App extends React.Component {
 
 	constructor( props ) {
-
+		
 		super( props );
 
 		const methods = [
@@ -145,8 +145,7 @@ export default class App extends React.Component {
 	}
 
 	render() {
-
-		const { options, settings, isOpen, selected, originalCount, ajax, onRenderOption, tags, queryString } = this.props;
+		const { name, options, settings, isOpen, selected, originalCount, ajax, onRenderOption, tags, queryString } = this.props;
 		const className = buildClassName( settings, isOpen, selected, tags );
 
 		return(
@@ -156,7 +155,7 @@ export default class App extends React.Component {
 				ref={ ( ref ) => this.ref = ref }
 				onFocus={ this.props.focusSelect }
 			>
-				<input type="hidden" value={ JSON.stringify( selected ) } />
+				<input name={name} type="hidden" value={ JSON.stringify( selected ) } />
 				<div className="rs-wrapper">
 					{ settings.multiple ? <MultiHeader /> : <Header /> }
 					{ ( isOpen || settings.materialize ) &&
